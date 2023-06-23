@@ -17,8 +17,14 @@ export default function Login() {
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.parse({ regNo: registerNumber, password }),
+			body: JSON.stringify({ regNo: registerNumber, password }),
 		});
+
+		console.log(response);
+
+		let data = await response.json();
+
+		console.log({ data });
 	}
 	return (
 		<>
@@ -31,6 +37,8 @@ export default function Login() {
 						placeholder="Register Number"
 						className="input input-bordered w-full max-w-xs"
 						value={registerNumber}
+						min={9}
+						max={9}
 						onChange={(e) => setRegisterNumber(e.target.value)}
 					/>
 					<input
@@ -38,6 +46,7 @@ export default function Login() {
 						placeholder="Password"
 						className="input input-bordered w-full max-w-xs"
 						value={password}
+						min={8}
 						onChange={(e) => setPassword(e.target.value)}
 					/>
 
