@@ -34,18 +34,21 @@ export default function Register() {
 	}
 	return (
 		<>
-			<h1>Login Page</h1>
+			
 			{/*  
 			<div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
   			<div class="sm:mx-auto sm:w-full sm:max-w-md">*/}
-			<div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-    <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+			<div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+		<div className="flex justify-center">
+			<h1 className="text-xl text-gray-800 font-bold">Student Registration</h1>
+		</div>
 			<form onSubmit={handleStudentLogin}>
 				<div className="flex flex-col m-2 space-y-5">
 					<input
 						type="text"
 						placeholder="Name"
-						className="input input-bordered w-full max-w-xs"
+						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
 						value={dataInput.name}
 						min={3}
 						onChange={(event) => {
@@ -61,7 +64,7 @@ export default function Register() {
 					<input
 						type="text"
 						placeholder="Register Number"
-						className="input input-bordered w-full max-w-xs"
+						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
 						value={dataInput.regNo}
 						min={9}
 						onChange={(event) => {
@@ -77,7 +80,7 @@ export default function Register() {
 					<input
 						type="text"
 						placeholder="Hostel Block Eg: A, B, C"
-						className="input input-bordered w-full max-w-xs"
+						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
 						value={dataInput.block}
 						onChange={(event) => {
 							setDataInput((d) => {
@@ -92,7 +95,7 @@ export default function Register() {
 					<input
 						type="password"
 						placeholder="Password"
-						className="input input-bordered w-full max-w-xs"
+						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
 						value={dataInput.password}
 						min={8}
 						onChange={(event) => {
@@ -108,7 +111,7 @@ export default function Register() {
 					<input
 						type="text"
 						placeholder="Room No"
-						className="input input-bordered w-full max-w-xs"
+						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
 						value={dataInput.roomNo}
 						onChange={(event) => {
 							setDataInput((d) => {
