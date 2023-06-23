@@ -141,19 +141,23 @@ export default function Leave() {
 		console.log({ data });
 	}
 	return (
-		<>
+		<div className="text-gray-100">
 			<h1>Leave Page</h1>
 			<button
-				className="btn btn-primary "
+				className="btn btn-primary"
 				onClick={() => leaveRef.current.showModal()}
 			>
 				Apply for Leave
 			</button>
 
 			{/* Open the modal using ID.showModal() method */}
-			<dialog id="my_modal_1" ref={leaveRef} className="modal">
+			<dialog
+				id="my_modal_1"
+				ref={leaveRef}
+				className="modal text-gray-50"
+			>
 				<form method="dialog" className="modal-box">
-					<h2 className="text-2xl text-center font-semibold">
+					<h2 className="text-2xl text-center font-semibold text-gray-50">
 						Apply for Leave
 					</h2>
 
@@ -256,8 +260,12 @@ export default function Leave() {
 				</form>
 			</dialog>
 
-			<dialog id="my_modal_2" ref={leaveEditRef} className="modal">
-				<form method="dialog" className="modal-box">
+			<dialog
+				id="my_modal_2"
+				ref={leaveEditRef}
+				className="modal text-gray-50"
+			>
+				<form method="dialog" className="modal-box text-gray-50">
 					<h2 className="text-2xl text-center font-semibold">
 						Edit Leave
 					</h2>
@@ -363,6 +371,6 @@ export default function Leave() {
 			</dialog>
 
 			<Table columns={leaveSchema} data={leaveData} />
-		</>
+		</div>
 	);
 }
