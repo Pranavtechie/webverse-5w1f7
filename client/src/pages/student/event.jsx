@@ -55,28 +55,7 @@ export default function Event() {
 				Header: "Event Poster",
 				accessor: "eventPoster",
 			},
-			{
-				Header: "Actions",
-				accessor: "actions",
-				Cell: (props) => {
-					return (
-						<div>
-							<button
-								className="btn btn-warning mr-2"
-								onClick={() => handleEdit(props.row.original)}
-							>
-								Edit
-							</button>
-							<button
-								className="btn btn-error"
-								onClick={() => handleDelete(props.row.original)}
-							>
-								Delete
-							</button>
-						</div>
-					);
-				},
-			},
+			
 		],
 		[]
 	);
