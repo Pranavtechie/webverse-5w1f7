@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import { API_URL, getAuthToken } from "@/constants";
-import Table from "@/components/Table";
+// import Table from "@/components/Table";
 
 export default function Leave() {
 	const [newLeaveData, setNewLeaveData] = useState({
@@ -361,7 +361,7 @@ export default function Leave() {
 				</form>
 			</dialog>
 
-			<Table columns={leaveSchema} data={leaveData} />
+			{/* <Table columns={leaveSchema} data={leaveData} /> */}
 		</>
 	);
 }
