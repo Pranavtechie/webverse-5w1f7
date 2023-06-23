@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo } from "react";
 import { API_URL, getAuthToken } from "@/constants";
-// import Table from "@/components/Table";
+import Table from "@/components/Table";
 
 export default function Leave() {
 	const [newLeaveData, setNewLeaveData] = useState({
@@ -15,7 +15,7 @@ export default function Leave() {
 		() => [
 			{
 				Header: "Leave Date",
-				accessor: "leaveDate", // accessor is the "key" in the data
+				accessor: "leaveDate",
 			},
 			{
 				Header: "Type of Leave",
@@ -131,7 +131,7 @@ export default function Leave() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				Authorization: `Bearer ${getAuthToken()}`,
+				authorization: `Bearer ${getAuthToken()}`,
 			},
 			body: JSON.stringify(newLeaveData),
 		});
@@ -361,7 +361,7 @@ export default function Leave() {
 				</form>
 			</dialog>
 
-			{/* <Table columns={leaveSchema} data={leaveData} /> */}
+			<Table columns={leaveSchema} data={leaveData} />
 		</>
 	);
 }
