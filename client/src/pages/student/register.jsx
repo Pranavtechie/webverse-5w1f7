@@ -130,13 +130,7 @@ export default function Register() {
 							});
 						}}
 					/>
-<dialog id="my_modal_3" className="modal" ref={forgetRef}>
-  <form method="dialog" className="modal-box max-w-sm text-white">
-    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-    <h3 className="font-bold text-lg">Hey there!</h3>
-    <p className="py-4">Contact the SDC to reset your password</p>
-  </form>
-</dialog>
+
 					<div id="alertForForgotPassword">
 						<button type="button" className="text-gray-700 flex " onClick={() => forgetRef.current.showModal()}>Forgot Password</button>
 					</div>
@@ -147,6 +141,13 @@ export default function Register() {
 					/>
 				</div>
 			</form>
+			<dialog id="my_modal_3" className="modal" ref={forgetRef}>
+  <form method="dialog" className="modal-box max-w-sm text-white">
+    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    <h3 className="font-bold text-lg">Hey there!</h3>
+    <p className="py-4">Contact the SDC to reset your password</p>
+  </form>
+</dialog>
 			</div>
 			</div>
 		</>
