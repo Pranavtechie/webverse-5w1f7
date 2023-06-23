@@ -32,7 +32,7 @@ export default function Dashboard() {
 			});
 
 			let studentData = await response.json();
-			setStudentDetails(studentData.data);
+			setStudentDetails(studentData?.data);
 		}
 		// Initiate Network Request
 		networkRequestMe();
@@ -51,8 +51,8 @@ export default function Dashboard() {
 
 			<div className="border-2 border-gray-800 max-w-fit p-3">
 				<h3>Warden Details</h3>
-				<p>Name: {wardenDetails.name}</p>
-				<p>Block: {wardenDetails.block}</p>
+				<p>Name: {wardenDetails?.name}</p>
+				<p>Block: {wardenDetails?.block}</p>
 			</div>
 
 			<div className="border-2 border-gray-800 max-w-fit p-3">
