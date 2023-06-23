@@ -7,19 +7,18 @@ export default function Register() {
 	const router = useRouter();
 	const [dataInput, setDataInput] = useState({
 		name: "",
-		regNo: "",
-		block: "",
+		empId: "",
 		password: "",
-		roomNo: "",
+		isHOD: "",
 	});
 
-	async function handleStudentLogin(e) {
+	async function handleFacultyLogin(e) {
 		e.preventDefault();
 
 		console.log(e);
 		console.log(dataInput);
 
-		let response = await fetch(`${API_URL}/student/auth/register`, {
+		let response = await fetch(`${API_URL}/faculty/auth/register`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -49,9 +48,9 @@ export default function Register() {
 	<div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
     <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
 		<div className="flex justify-center">
-			<h1 className="text-xl text-gray-800 font-bold">Student Registration</h1>
+			<h1 className="text-xl text-gray-800 font-bold">Faculty Registration</h1>
 		</div>
-			<form onSubmit={handleStudentLogin}>
+			<form onSubmit={handleFacultyLogin}>
 				<div className="flex flex-col m-2 space-y-5">
 					<input
 						type="text"
@@ -71,30 +70,16 @@ export default function Register() {
 
 					<input
 						type="text"
-						placeholder="Register Number"
+						placeholder="Employee ID"
 						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
-						value={dataInput.regNo}
-						min={9}
+						value={dataInput.empId}
+						min={5}
+						max={5}
 						onChange={(event) => {
 							setDataInput((d) => {
 								return {
 									...d,
-									regNo: event.target.value,
-								};
-							});
-						}}
-					/>
-
-					<input
-						type="text"
-						placeholder="Hostel Block Eg: A, B, C"
-						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
-						value={dataInput.block}
-						onChange={(event) => {
-							setDataInput((d) => {
-								return {
-									...d,
-									block: event.target.value,
+									empId: event.target.value,
 								};
 							});
 						}}
@@ -115,21 +100,23 @@ export default function Register() {
 							});
 						}}
 					/>
-
-					<input
-						type="text"
-						placeholder="Room No"
-						className="input input-bordered w-full text-[#c084fc] mx-auto max-w-xs"
-						value={dataInput.roomNo}
+					<div className="flex justify-center">
+					<input type="checkbox"  class="checkbox"
+						value={dataInput.isHOD}
 						onChange={(event) => {
 							setDataInput((d) => {
 								return {
 									...d,
-									roomNo: event.target.value,
+									isHOD: event.target.checked,
 								};
 							});
 						}}
-					/>
+						/>
+						<label className="content-align">{" "}HOD?</label>
+						
+					</div>
+
+					
 <dialog id="my_modal_3" className="modal" ref={forgetRef}>
   <form method="dialog" className="modal-box max-w-sm text-white">
     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
