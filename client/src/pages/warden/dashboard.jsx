@@ -21,7 +21,7 @@ export default function Dashboard() {
 		}
 		// Initiate Network Request
 		networkRequestMe();
-	});
+	}, []);
 
 	return (
 		<>
