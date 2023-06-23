@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { API_URL } from "@/constants";
+import { API_URL, setAuthToken } from "@/constants";
 export default function Login() {
 	const router = useRouter();
 	const [registerNumber, setRegisterNumber] = useState("");
@@ -19,12 +19,9 @@ export default function Login() {
 			},
 			body: JSON.stringify({ regNo: registerNumber, password }),
 		});
-
-		console.log(response);
-
 		let data = await response.json();
 
-		console.log({ data });
+		setAuthToken(data.token);
 	}
 	return (
 		<>
