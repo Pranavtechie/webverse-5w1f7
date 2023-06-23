@@ -5,7 +5,7 @@ import { API_URL, getAuthToken } from "@/constants";
 
 export default function Leave() {
 	const [newLeaveData, setNewLeaveData] = useState({
-		leaveType: "",
+		leaveType: "parent",
 		leaveDate: "",
 		leaveTime: "",
 		leaveDuration: "",
