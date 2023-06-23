@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { useRouter } from "next/router";
 import { API_URL, setAuthToken } from "@/constants";
 export default function Login() {
+	const forgetRef = useRef(); 
 	const router = useRouter();
 	const [employeeId, setEmployeeId] = useState("");
 	const [password, setPassword] = useState("");
@@ -46,7 +47,9 @@ export default function Login() {
 						min={8}
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-
+					<div id="alertForForgotPassword">
+						<button type="button" className="text-gray-700 flex " onClick={() => forgetRef.current.showModal()}>Forgot Password</button>
+					</div>
 					<input
 						type="submit"
 						className="btn btn-primary"
@@ -54,6 +57,13 @@ export default function Login() {
 					/>
 				</div>
 			</form>
+			<dialog id="my_modal_3" className="modal" ref={forgetRef}>
+  <form method="dialog" className="modal-box max-w-sm text-white">
+    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    <h3 className="font-bold text-lg">Hey there!</h3>
+    <p className="py-4">Contact the SDC to reset your password</p>
+  </form>
+</dialog>
 		</>
 	);
 }

@@ -34,10 +34,6 @@ export default function Register() {
 	}
 	return (
 		<>
-			
-			{/*  
-			<div class="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-  			<div class="sm:mx-auto sm:w-full sm:max-w-md">*/}
 	
 	<div className="navbar bg-base-300">
   <a className="btn btn-ghost normal-case text-xl">WebVerse</a>
@@ -115,12 +111,6 @@ export default function Register() {
 						<label className="content-align">{" "}HOD?</label>
 						
 					</div>
-
-					
-
-					<div id="alertForForgotPassword">
-						<button type="button" className="text-gray-700 flex " onClick={() => forgetRef.current.showModal()}>Forgot Password</button>
-					</div>
 					<input
 						type="submit"
 						className="btn btn-primary hover:bg-[#e0f2fe] hover:text-black bg-[#0c4a6e] mx-auto max-w-xs text-gray-200"
@@ -130,13 +120,6 @@ export default function Register() {
 			</form>
 			</div>
 			</div>
-			<dialog id="my_modal_3" className="modal" ref={forgetRef}>
-  <form method="dialog" className="modal-box max-w-sm text-white">
-    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-    <h3 className="font-bold text-lg">Hey there!</h3>
-    <p className="py-4">Contact the SDC to reset your password</p>
-  </form>
-</dialog>
 		</>
 	);
 }
