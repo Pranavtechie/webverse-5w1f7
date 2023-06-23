@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { API_URL } from "@/constants";
 
 export default function Register() {
+	const forgetRef = useRef(); 
 	const router = useRouter();
 	const [dataInput, setDataInput] = useState({
 		name: "",
@@ -122,10 +123,19 @@ export default function Register() {
 							});
 						}}
 					/>
-
+<dialog id="my_modal_3" className="modal" ref={forgetRef}>
+  <form method="dialog" className="modal-box max-w-sm text-white">
+    <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+    <h3 className="font-bold text-lg">Hey there!</h3>
+    <p className="py-4">Contact the SDC to reset your password</p>
+  </form>
+</dialog>
+					<div id="alertForForgotPassword">
+						<button type="button" className="text-gray-700 flex " onClick={() => forgetRef.current.showModal()}>Forgot Password</button>
+					</div>
 					<input
 						type="submit"
-						className="btn btn-primary"
+						className="btn btn-primary hover:bg-[#e0f2fe] hover:text-black bg-[#0c4a6e] mx-auto max-w-xs text-gray-200"
 						value="Register"
 					/>
 				</div>
