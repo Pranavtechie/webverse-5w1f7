@@ -124,6 +124,7 @@ export default function Leave() {
 		fetchDefaultData();
 	}, []);
 
+	console.log(leaveData);
 	async function applyForLeave() {
 		console.log(newLeaveData);
 
@@ -131,7 +132,7 @@ export default function Leave() {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				authorization: `Bearer ${getAuthToken()}`,
+				uthorization: `Bearer ${getAuthToken()}`,
 			},
 			body: JSON.stringify(newLeaveData),
 		});

@@ -29,15 +29,19 @@ export default function Register() {
 			body: JSON.stringify(dataInput),
 		});
 
-		console.log(response);
+		// console.log(response);
 
 		let data = await response.json();
 
-		console.log({ data });
+		// console.log({ data });
+
+		if (response.status === 201) {
+			router.push("/student/login");
+		}
 	}
 	return (
 		<>
--
+			-
 			<div className="navbar bg-base-300">
 				<a className="btn btn-ghost normal-case text-xl">WebVerse</a>
 			</div>
@@ -128,7 +132,7 @@ export default function Register() {
 									});
 								}}
 							/>
-							
+
 							<div id="alertForForgotPassword">
 								<button
 									type="button"
@@ -164,26 +168,17 @@ export default function Register() {
 					</dialog>
 				</div>
 			</div>
-			<dialog
-								id="my_modal_3"
-								className="modal"
-								ref={forgetRef}
-							>
-								<form
-									method="dialog"
-									className="modal-box max-w-sm text-white"
-								>
-									<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-										✕
-									</button>
-									<h3 className="font-bold text-lg">
-										Hey there!
-									</h3>
-									<p className="py-4">
-										Contact the SDC to reset your password
-									</p>
-								</form>
-							</dialog>
+			<dialog id="my_modal_3" className="modal" ref={forgetRef}>
+				<form method="dialog" className="modal-box max-w-sm text-white">
+					<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+						✕
+					</button>
+					<h3 className="font-bold text-lg">Hey there!</h3>
+					<p className="py-4">
+						Contact the SDC to reset your password
+					</p>
+				</form>
+			</dialog>
 		</>
 	);
 }
