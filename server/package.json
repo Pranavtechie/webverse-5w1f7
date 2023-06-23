@@ -20,6 +20,7 @@
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.22",
     "prisma": "^4.15.0",
     "start": "^5.1.0",
     "swagger-autogen": "^2.23.2",
